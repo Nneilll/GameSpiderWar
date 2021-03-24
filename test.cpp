@@ -7,7 +7,7 @@
 
 using namespace std;
 
-//функция---------------------------------------------------------------------------------------------------------------------------------
+//function---------------------------------------------------------------------------------------------------------------------------------
 int spider00(int min, int max) {
     srand(static_cast < unsigned int >(time(0)));
          static const double fraction = 1.0 / (static_cast<double>(RAND_MAX) + 1.0); 
@@ -19,111 +19,109 @@ int main(){
 
      int sum01, sum02, sum03;
 
-    //Поговорим с пользователем объясним ему правила игра, узнаем имя ------------------------------------------------------------------
+    //Let's talk to the user explain to him the game game, find out the name ------------------------------------------------------------------
     string name;
-    cout << "Добро пожаловать в игру игрок!!!" << endl;
-    cout <<     "Введи своё имя новичёк - ";
+    cout << "Welcome to the game player !!!" << endl;
+    cout <<     "Enter your name newcomer - ";
     cin >> name;
-    cout << "Добро пожаловать " << name << " желаем неприменно победить и приятно провести время!)" << endl;
-    cout << "!!!ПРАВИЛА ИГРЫ!!!" << endl;
-    cout << "1. У тебя будет 100 солдат." << endl;
-    cout << "2. На тебя будут нападать пауки 3 волнами, и всего их будет 90 ." << endl;
-    cout << "3. 1 убитый паук даёт тебе 150 очков,  так что " << name << " твоя цель как ты уже понял) собрать как можно больше очков!" << endl;
-    cout << "4. Минимальное колличество набраных очков за убитых пауков для защиты крепости - 11.000" << endl;
-    cout << "5. В общем как ты уже понял суть игры в том что бы разделить свою сотню солдат таким образом что бы убить максимальное колличество пауков!" << endl;
-    cout << "6. На каждой волне тебя будет ждать неизвестное колличесво пауков, так что прояви интуицию)" << endl;
+    cout << "Welcome " << name << "We wish to defeat and nicely spend time!)" << endl;
+    cout << "!!!RULES OF THE GAME!!!" << endl;
+    cout << "1.You will have 100 soldiers. " << endl;
+    cout << "2.Spiders will attack you with 3 waves, and all of them will be 90." << endl;
+    cout << "3. 1 killed spider gives you 150 points, so " << name << " Your goal as you already understood) to collect as much glasses as possible!" << endl;
+    cout << "4.The minimum number of scan points for killed spiders to protect the fortress - 11.000 " << endl;
+    cout << "5.In general, as you already understood the essence of the game whether to divide your hundred soldiers in such a way to kill the maximum number of spiders!" << endl;
+    cout << "6. Each wave will be waiting for you an unknown collical spiders, so show intuition)" << endl;
     cout << " " << endl;
-    cout << "Ну что ж) Начнём битву!)" << endl;
-    //Введём волны 
+    cout << "Well,) Let's start the battle!)" << endl;
+    //We introduce the waves 
     int wane01, wane02, wane03;
     
-    //тут у нас начало первой волны------------------------------------------------------------------------------------------------------
-    cout << "Введи количество солдат для первой волны! - ";
+    // here we have the beginning of the first wave------------------------------------------------------------------------------------------------------
+    cout << "Enter the number of soldiers for the first wave! - ";
     cin >> wane01;
     if (wane01 > 100 ){
-        cout << "Неплохо но всё же тебе не кажется что это слишком много для одной волны?" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Not bad, but still it doesn't seem to you that it is too much for one wave? " << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane01;  
     } else if (wane01 < 1) {
-        cout << "Ну этого точно будут слишком мало для одной волны)" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Well, this will be too little for one wave)" << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane01;
     } else {
-        cout << "Суппер " << name << ", Это число неприменно подойдёт)" << endl;
+        cout << "Perfect " << name << ", This number is incomprehensible)" << endl;
     }
-    // тут у нас пауки для первой волны------------------------------------------------------------------------------------------------
+    //here we have spiders for the first wave------------------------------------------------------------------------------------------------
      int spider01 = spider00(1, 50);
-    cout << "Колличество пауков на первой волне - " << spider01 << ", надеюсь ты выставил достаточно солдат отчаянный " << name << endl;
+    cout << "Number of spiders on the first wave - " << spider01 << ", I hope you put out enough soldiers desperate " << name << endl;
 
-    //Схватка солдат с пауками волна первая)--------------------------------------------------------------------------------------------
+    // Fight soldiers with spiders wave first)--------------------------------------------------------------------------------------------
     
     int result01;
     result01 = spider01 - wane01;
     int Score = result01 * 150;
-    cout << "Результат битвы первой волны - " << Score << endl;
+    cout << "Result of the Battle of the First Wave - " << Score << endl;
     
-    // тут у нас 2 волна----------------------------------------------------------------------------------------------------------------
-    cout << "Введи количество солдат для второй волны! - ";
+    //here we have 2 waves----------------------------------------------------------------------------------------------------------------
+    cout << "Enter the number of soldiers for the second wave! - ";
     cin >> wane02;
     if (wane02 > 100 ){
-        cout << "Неплохо но всё же тебе не кажется что это слишком много для одной волны?" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Not bad, but still you do not think that it is too much for one wave?" << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane02;  
     } else if (wane02 < 1) {
-        cout << "Ну этого точно будут слишком мало для одной волны)" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Well, this will be too little for one wave)" << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane02;
     } else {
-        cout << "Суппер " << name << ", Это число неприменно подойдёт)" << endl;
+        cout << "Perfect " << name << ", This number is incomprehensible)" << endl;
     }
-    //пауки для 2 волны------------------------------------------------------------------------------------------------------------------
+    //Spiders for 2 waves------------------------------------------------------------------------------------------------------------------
     int spider02 = spider00(1, 50);
-    cout << "Колличество пауков на первой волне - " << spider02 << ", надеюсь ты выставил достаточно солдат отчаянный " << name << endl;
+    cout << "Number of spiders on the first wave - " << spider02 << ",I hope you put out enough soldiers desperate " << name << endl;
 
-    //Схватка солдат с пауками волна вторая)--------------------------------------------------------------------------------------------
+    // Fight soldiers with spiders wave second) --------------------------------------------------------------------------------------------
     
    int result02;
     result02 = spider02 - wane02;
     int Score02 = result02 * 150;
-    cout << "Результат битвы второй волны - " << Score02 << endl;
+    cout << "The result of the battle of the second wave - " << Score02 << endl;
     
-    //третья волна-----------------------------------------------------------------------------------------------------------------------
-    cout << "Введи количество солдат для третьей волны! - ";
+    // Third wave-----------------------------------------------------------------------------------------------------------------------
+    cout << "Enter the number of soldiers for the third wave! - ";
     cin >> wane03;
     if (wane01 > 100 ){
-        cout << "Неплохо но всё же тебе не кажется что это слишком много для одной волны?" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Not bad, but still you do not think that it is too much for one wave?" << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane03;  
     } else if (wane03 < 1) {
-        cout << "Ну этого точно будут слишком мало для одной волны)" << endl;
-        cout << "Попробуй ввести другое число) - ";
+        cout << "Well, this will be too little for one wave.)" << endl;
+        cout << "Try to enter another number) - ";
         cin >> wane03;
     } else {
-        cout << "Суппер " << name << ", Это число неприменно подойдёт)" << endl;
+        cout << "Perfect " << name << ", This number is incomprehensible)" << endl;
     }
-    //пауки для 3 волны
+    // spiders for 3 waves
     int spider03 = spider00(1, 50);
-    cout << "Колличество пауков на первой волне - " << spider03 << ", надеюсь ты выставил достаточно солдат отчаянный " << name << endl;
+    cout << "Number of spiders on the first wave - " << spider03 << ", I hope you put out enough soldiers desperate " << name << endl;
 
-    //Схватка солдат с пауками волна третья)--------------------------------------------------------------------------------------------
-    
+    //Fight soldiers with spiders wave third) ------------------------------------------- -------------------------------------------------
     int result03;
     result02 = spider03 - wane03;
     int Score03 = result03 * 150;
-    cout << "Результат битвы третей волны - " << Score03 << endl;
+    cout << "The result of the Battle of the Three Waves - " << Score03 << endl;
     
-    //конец блока с волнами регистрацией солдат и пауков---------------------------------------------------------------------------------------------------
-    cout << "Ну что ж хехе))) Колличество солдат выделеное для первой волны - " << wane01 << ". Колличество солдат для 2 волны - " << wane02 << ", Колличество солдат для 3 волны - " << wane03 << endl;
-    cout << "Итак посмотрим насколько удача благоволит тебе храбрый " << name << "!!!" << endl;
+    // end of the block with waves registration of soldiers and spiders--------------------------------------------------------------------------------------------------
+    cout << "Well, hehe))) the number of soldiers allocated for the first wave - " << wane01 << ".Collision of soldiers for 2 waves - " << wane02 << ",Collision of soldiers for 3 waves - " << wane03 << endl;
+    cout << "So let's see how good luck to you brave " << name << "!!!" << endl;
 
-    // Подсчитаем результат трёх волн
+    // Calculate the result of three waves
     int Finish = result01 + result02 + result03;
-    cout << "Колличество очков за 3 волны - " <<  Finish << endl;
+    cout << "Palmous glasses for 3 waves - " <<  Finish << endl;
 
-    //Система похвал игрока
-    //отрицательная похвала
+    //The system praise player
     if (Finish <= 11000){
-        cout << "Что ж " << name << " ты неудачник... Ты набрал меньше 11000 очков и твоя крупость рухнула.... Мне жаль...." << endl;
+        cout << "Что ж " << name << " You are a loser ... You scored less than 11000 points and your durability collapsed .... I'm sorry...." << endl;
         cout << "GAME OVER!!!";
         cout << "GAME OVER!!!";
         cout << "GAME OVER!!!";
@@ -144,7 +142,7 @@ int main(){
         cout << "GAME OVER!!!" << endl;
     } 
      if (Finish >= 11000){
-        cout << "Боже " << name << " ты действительно потрясающий воин, тебе удалось разгромить пауков со счётом - " << Finish << endl;
+        cout << "Боже " << name << " You are really a stunning warrior, you managed to defeat spiders with the score - " << Finish << endl;
         cout << "YOU WIN!!!";
         cout << "YOU WIN!!!";
         cout << "YOU WIN!!!";
